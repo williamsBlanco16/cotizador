@@ -1,7 +1,10 @@
 import ReactDom from 'react-dom'
+import React from 'react'
+import App from './components/App'
+import './index.css'
 
 ReactDom.render(
-  'Hola mundo',
+  <App/>,
   document.querySelector('#root')
 )
 

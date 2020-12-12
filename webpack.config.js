@@ -12,10 +12,18 @@ const babelRule = {
   }
 }
 
+const cssRule = {
+  test: /\.css$/i,
+  use:['style-loader', 'css-loader']
+}
 module.exports = {
   module: {
-    rules:[babelRule]
+    rules:[
+      babelRule,
+      cssRule
+    ]
   },
   plugins:[new HtmlWebpackPlugin({template:'./src/index.html'})],
-  devtool: 'source-map'
+  devtool: 'source-map',
+  watch: true
 }
