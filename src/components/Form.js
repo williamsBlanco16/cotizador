@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from '@emotion/styled'
-import { calculateByBrand, yearDifference, getPlan } from '../../helper';
+import { calculateByBrand, yearDifference, getPlan } from '../../helper'
+import PropTypes from 'prop-types'
 
 const Field = styled.div`
   display: flex;
@@ -72,6 +73,7 @@ const Form = ({setDataFrm, setSpinner}) => {
       setError(true)
       return
     }
+
     setSpinner(true)
     setError(false)
     setDataFrm({})
@@ -151,6 +153,11 @@ const Form = ({setDataFrm, setSpinner}) => {
       <Button type="submit"> Cotizar </Button>
     </form>
   );
+}
+
+Form.propTypes = {
+  setDataFrm: PropTypes.func.isRequired,
+  setSpinner: PropTypes.func.isRequired
 }
 
 export default Form;

@@ -17,7 +17,7 @@ const ContainerForm = styled.div`
 `;
 export default function App() {
   const [dataFrm, setDataFrm] = useState({});
-  const {data, quotation} = dataFrm;
+  const {data, quotation=0} = dataFrm;
   const [spinner, setSpinner] = useState(false);
   return (
     <Container>
@@ -29,7 +29,7 @@ export default function App() {
         />
        { data && <Summary {...data}/>}
        {spinner && <Spinner/>}
-       <Result quotation={quotation}/>
+       {!spinner && <Result quotation={quotation}/>}
       </ContainerForm>
     </Container>
   )

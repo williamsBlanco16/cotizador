@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled'
 import {TransitionGroup, CSSTransition} from 'react-transition-group'
+import PropTypes from 'prop-types'
 
 const Message = styled.p`
   background-color: rgb(127, 224, 237);
@@ -46,6 +47,10 @@ const Result = ({quotation}) => {
           </TransitionGroup>
         )
   ) 
+}
+
+Result.propTypes = {
+  quotation: PropTypes.number.isRequired
 }
 
 export default Result;

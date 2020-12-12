@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled';
 import { firstUpperCase } from '../../helper';
+import PropTypes from 'prop-types'
 
 const ContainerSummary = styled.div`
   padding: 1rem;
@@ -21,4 +22,10 @@ export default function Summary({brand ='', plan='', year='' }) {
       </ul>
     </ContainerSummary>
   )
+}
+
+Summary.propTypes = {
+  brand: PropTypes.string,
+  plan: PropTypes.string,
+  year: PropTypes.string
 }
